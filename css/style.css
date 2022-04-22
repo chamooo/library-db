@@ -1,0 +1,107 @@
+.wrapper {
+    height: 100%;
+    width: 800px;
+    margin: 0 auto;
+}
+body {
+    background-color: rgb(25, 25, 25);
+}
+.title {
+    margin-top: 50px;
+    color: antiquewhite;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+.query-button {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: antiquewhite;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 50px;
+    line-height: 45px;
+}
+.query-button:hover {
+    color: rgb(255, 255, 255);
+}
+.query-button::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    /* background-color: #fff; */
+    display: block;
+    position: absolute;
+    left: -30px;
+    top: 16px;
+    transition: all 0.4s;
+}
+.query-button:hover::before {
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+.underline-one:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: rgb(228, 228, 228); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.underline-one:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color:  rgb(228, 228, 228); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+.buttons-container {
+    position: relative;
+    margin-top: 50px;
+}
+.left-column {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.right-column {
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+td, tr {
+    color: rgb(221, 221, 221);
+    font-weight: 300;
+}
+th {
+    font-weight: 500;
+    font-size: 25px;
+}
+.id-column {
+    width: 5em;
+}
+
+.name {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    width: 20em;
+}
+.sub-title {
+    margin-top: 50px;
+    color: antiquewhite;
+    font-family: 'Cormorant Garamond', serif;
+}
