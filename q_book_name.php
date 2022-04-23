@@ -25,9 +25,9 @@
                 <input class="btn btn-outline-secondary" type="submit" name="submit" value="Пошук" id="button-addon2"></input>
                 <?php
                     require_once 'connect.php';
-                    function search_output($first_value, $second_value)
+    
                     if(isset($_POST['submit'])) {
-                        $first_value = $_POST['search'];
+                        $search = $_POST['search'];
                         $query = "SELECT `book`.`Назва книги`, 
                         `author`.`Автор`, 
                         `editions`.`Видавництво`, 
@@ -41,7 +41,7 @@
                         JOIN `editions` ON `Код видавництво` = `Код_видавництво`
                         JOIN `city` ON `Код місто` = `Код_місто`
                         JOIN `genres` ON `Код жанр` = `Код_жанр`
-                        WHERE `book`.`Назва книги` LIKE '%$first_value%'";
+                        WHERE `book`.`Назва книги` LIKE '%$search%'";
                         $books = mysqli_query($connection, $query);
                         $books = mysqli_fetch_all($books);
                         foreach ($books as $book) {
