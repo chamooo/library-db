@@ -22,12 +22,17 @@
     <div class="wrapper">
         <h1 class="title">Запити</h1>
         <div class="buttons-container">
-            <div class="left-column">
-                <a class="underline-one query-button book-name" href="q_book_name.php">Пошук за назвою книги</a>
-                <a class="underline-one query-button book-name" href="q_author_genre.php">Пошук за автором та жанром</a>
-                <a class="underline-one query-button book-name" href="q_min_max_price.php">Мінімальна та максимальна<br> ціна  на книги видавництва Віват</a>
+            <div class="btn-item">
+                <a class="underline-one query-button" href="q_book_name.php">Пошук за назвою книги</a>
             </div>
-            <div class="right-column">
+            <div class="btn-item">
+                <a class="underline-one query-button" href="q_author_genre.php">Пошук за автором та жанром</a>
+            </div>
+            <div class="btn-item">
+                <a class="underline-one query-button" href="q_min_max_price.php">Мінімальна та максимальна<br> ціна  на книги видавництва Віват</a>
+            </div>  
+            <div class="btn-item">
+                <a class="underline-one query-button" href="q_ordered.php">Упорядкований список книг</a>
             </div>
         </div>
         <!-- <table class='table table-dark table-striped table-hover table-bordered'>

@@ -13,9 +13,13 @@ body {
     text-align: center;
     text-decoration: none;
 }
-
-.query-button {
+.btn-item {
     display: block;
+    width: 100%;
+}
+.query-button {
+    display: inline-block;
+    width: auto;
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
     color: antiquewhite;
@@ -71,16 +75,7 @@ body {
     position: relative;
     margin-top: 50px;
 }
-.left-column {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.right-column {
-    position: relative;
-    right: 0;
-    top: 0;
-}
+
 
 td, tr {
     color: rgb(221, 221, 221);
@@ -88,7 +83,7 @@ td, tr {
 }
 th {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 18px;
 }
 .id-column {
     width: 5em;
@@ -104,4 +99,15 @@ th {
     margin-top: 50px;
     color: antiquewhite;
     font-family: 'Cormorant Garamond', serif;
+}
+.input-group {
+    margin-top: 10px;
+}
+.input-group input {
+    margin-bottom: 20px;
+}
+.main-menu-btn {
+    color: aliceblue;
+    position: fixed;
+    text-decoration: none;
 }

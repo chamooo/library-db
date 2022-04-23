@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="main-menu-btn" href="index.php">головне меню</a>
     <h1 class="title">Пошук за назвою книги</h1>  
     <div class="wrapper">
         <h2 class="sub-title">Введіть назву книги</h2>
@@ -24,23 +25,37 @@
                 <input class="btn btn-outline-secondary" type="submit" name="submit" value="Пошук" id="button-addon2"></input>
                 <?php
                     require_once 'connect.php';
-
+                    function search_output($first_value, $second_value)
                     if(isset($_POST['submit'])) {
-                        $search = $_POST['search'];
-                        $query = "SELECT * FROM `book` WHERE `book`.`Назва книги` LIKE '%$search%'";
+                        $first_value = $_POST['search'];
+                        $query = "SELECT `book`.`Назва книги`, 
+                        `author`.`Автор`, 
+                        `editions`.`Видавництво`, 
+                        `city`.`Місто`,
+                        `book`.`Рік`,
+                        `book`.`Сторінок`,
+                        `genres`.`Жанр`,
+						`book`.`Ціна`
+                        FROM `book` 
+                        JOIN `author` ON `Код автор` = `Код_автор`
+                        JOIN `editions` ON `Код видавництво` = `Код_видавництво`
+                        JOIN `city` ON `Код місто` = `Код_місто`
+                        JOIN `genres` ON `Код жанр` = `Код_жанр`
+                        WHERE `book`.`Назва книги` LIKE '%$first_value%'";
                         $books = mysqli_query($connection, $query);
                         $books = mysqli_fetch_all($books);
                         foreach ($books as $book) {
                             ?>
                             <table class='table table-dark table-striped table-hover table-bordered'>
                             <tr>
-                                <th class="id-column">ID</th>
                                 <th>Назва</th>
                                 <th>Автор</th>
                                 <th>Видавництво</th>
                                 <th>Місто</th>
                                 <th>Рік</th>
                                 <th>Сторінок</th>
+                                <th>Жанр</th>
+                                <th>Ціна</th>
                             </tr>
                             <tr>
                                 <td><?=$book[0]?></td>
@@ -50,6 +65,7 @@
                                 <td><?=$book[4]?></td>
                                 <td><?=$book[5]?></td>
                                 <td><?=$book[6]?></td>
+                                <td><?=$book[7]?></td>
                             </tr>
                             </table>
                             <?php
