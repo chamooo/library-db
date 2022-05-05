@@ -15,9 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a class="main-menu-btn" href="index.php">головне меню</a>
     <h1 class="title">Пошук за назвою книги</h1>  
+    <a class="main-menu-btn" href="index.php">МЕНЮ</a>
     <div class="wrapper">
+
         <h2 class="sub-title">Введіть назву книги</h2>
         <form method="post">
             <div class="input-group mb-3">
@@ -25,7 +26,7 @@
                 <input class="btn btn-outline-secondary" type="submit" name="submit" value="Пошук" id="button-addon2"></input>
                 <?php
                     require_once 'connect.php';
-    
+
                     if(isset($_POST['submit'])) {
                         $search = $_POST['search'];
                         $query = "SELECT `book`.`Назва книги`, 
@@ -45,28 +46,28 @@
                         $books = mysqli_query($connection, $query);
                         $books = mysqli_fetch_all($books);
                         foreach ($books as $book) {
-                            ?>
+                ?>
                             <table class='table table-dark table-striped table-hover table-bordered'>
-                            <tr>
-                                <th>Назва</th>
-                                <th>Автор</th>
-                                <th>Видавництво</th>
-                                <th>Місто</th>
-                                <th>Рік</th>
-                                <th>Сторінок</th>
-                                <th>Жанр</th>
-                                <th>Ціна</th>
-                            </tr>
-                            <tr>
-                                <td><?=$book[0]?></td>
-                                <td><?=$book[1]?></td>
-                                <td><?=$book[2]?></td>
-                                <td><?=$book[3]?></td>
-                                <td><?=$book[4]?></td>
-                                <td><?=$book[5]?></td>
-                                <td><?=$book[6]?></td>
-                                <td><?=$book[7]?></td>
-                            </tr>
+                                <tr>
+                                    <th>Назва</th>
+                                    <th>Автор</th>
+                                    <th>Видавництво</th>
+                                    <th>Місто</th>
+                                    <th>Рік</th>
+                                    <th>Сторінок</th>
+                                    <th>Жанр</th>
+                                    <th>Ціна</th>
+                                </tr>
+                                <tr>
+                                    <td><?=$book[0]?></td>
+                                    <td><?=$book[1]?></td>
+                                    <td><?=$book[2]?></td>
+                                    <td><?=$book[3]?></td>
+                                    <td><?=$book[4]?></td>
+                                    <td><?=$book[5]?></td>
+                                    <td><?=$book[6]?></td>
+                                    <td><?=$book[7]?></td>
+                                </tr>
                             </table>
                             <?php
                         }

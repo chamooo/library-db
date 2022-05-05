@@ -1,6 +1,6 @@
 .wrapper {
     height: 100%;
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
 }
 body {
@@ -12,6 +12,15 @@ body {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
     text-decoration: none;
+    position: relative;
+}
+.bottom-title {
+    margin: 10px 0 30px 0;
+    color: antiquewhite;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    text-decoration: none;
+
 }
 .btn-item {
     display: block;
@@ -85,16 +94,7 @@ th {
     font-weight: 500;
     font-size: 18px;
 }
-.id-column {
-    width: 5em;
-}
 
-.name {
-    font-size: 25px;
-    margin: 0;
-    padding: 0;
-    width: 20em;
-}
 .sub-title {
     margin-top: 50px;
     color: antiquewhite;
@@ -107,7 +107,17 @@ th {
     margin-bottom: 20px;
 }
 .main-menu-btn {
+    margin: 0px 0px 0px 30px;
     color: aliceblue;
     position: fixed;
     text-decoration: none;
+}
+.tname {
+    width: 200px;
+}
+.tauthor {
+    width: 150px;
+}
+.tedit {
+    width: 150px;
 }
